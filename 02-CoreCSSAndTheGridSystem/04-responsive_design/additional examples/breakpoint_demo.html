@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakpoint demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 0 20px;
+        }
+
+        .box {
+            background-color: #444444;
+            opacity: .25;
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+            font-size: 26px;
+            line-height: 26px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 1200px) {
+            .box-xl {
+                background-color: #ff6c00;
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .box-lg {
+                background-color: #ff6c00;
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .box-md {
+                background-color: #ff6c00;
+                opacity: 1;
+            }
+        }
+        
+        @media (min-width: 576px) {
+            .box-sm {
+                background-color: #ff6c00;
+                opacity: 1;
+            }
+        }
+
+        .box-default {
+            background-color: #ff6c00;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-header">
+                        <h1>Breakpoint Demo <small id="resolution"></small></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="grid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 col-md-2">
+                    <div class="box box-default"><strong>Default</strong></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="box box-sm"><strong>Small</strong></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="box box-md"><strong>Medium</strong></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="box box-lg"><strong>Large</strong></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="box box-xl"><strong>Extra Large</strong></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <p><small><a class="text-muted" data-toggle="collapse" href="#help" aria-expanded="false" aria-controls="collapseExample">Explanation</a></small></p>
+                    <div class="collapse" id="help">
+                        <hr>
+                        <p>Bootstrap has four main breakpoints:</p>
+                        <ul>
+                            <li>Extra Large: <code>&gt;=1200px</code></li>
+                            <li>Large: <code>&gt;=992px</code></li>
+                            <li>Medium: <code>&gt;=768px</code></li>
+                            <li>Small: <code>&gt;=567px</code></li>
+                            <li>Default: <code>&lt;567px</code></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        /* global $ */
+        var el = $('#resolution');
+        $(window).on('load resize', function() {
+            el.html($(window).width() + 'px');
+        })
+    </script>
+</body>
+
+</html>

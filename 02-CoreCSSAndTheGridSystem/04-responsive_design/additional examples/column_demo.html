@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        .box {
+            background-color: #444444;
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+            font-size: 32px;
+            line-height: 32px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .box strong {
+            margin-right: 5px;
+        }
+
+        .box-1 {
+            background-color: #ff4b9c;
+        }
+
+        .box-2 {
+            background-color: #4bedff;
+        }
+
+        .box-3 {
+            background-color: #4bffb6;
+        }
+
+        .box-4 {
+            background-color: #BA9BFF;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header">
+                        <h1>Column Demo <small id="resolution"></small></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="box box-1">
+                        <span class="d-none d-lg-block"><strong>A</strong> col-lg-3</span>
+                        <span class="d-none d-md-block d-lg-none"><strong>A</strong> col-md-4</span>
+                        <span class="d-none d-sm-block d-md-none"><strong>A</strong> col-sm-6</span>
+                        <span class="d-block d-sm-none"><strong>A</strong> col-12</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-8 col-lg-3">
+                    <div class="box box-2">
+                        <span class="d-none d-lg-block"><strong>B</strong> col-lg-3</span>
+                        <span class="d-none d-md-block d-lg-none"><strong>B</strong> col-md-8</span>
+                        <span class="d-none d-sm-block d-md-none"><strong>B</strong> col-sm-6</span>
+                        <span class="d-block d-sm-none"><strong>B</strong> col-12</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="box box-3">
+                        <span class="d-none d-lg-block"><strong>C</strong> col-lg-3</span>
+                        <span class="d-none d-md-block d-lg-none"><strong>C</strong> col-md-6</span>
+                        <span class="d-none d-sm-block d-md-none"><strong>C</strong> col-sm-12</span>
+                        <span class="d-block d-sm-none"><strong>C</strong> col-12</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="box box-4">
+                        <span class="d-none d-lg-block"><strong>D</strong> col-lg-3</span>
+                        <span class="d-none d-md-block d-lg-none"><strong>D</strong> col-md-6</span>
+                        <span class="d-none d-sm-block d-md-none"><strong>D</strong> col-sm-12</span>
+                        <span class="d-block d-sm-none"><strong>D</strong> col-12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p><small><a class="text-muted" data-toggle="collapse" href="#help" aria-expanded="false" aria-controls="collapseExample">Explanation</a></small></p>
+                    <div class="collapse" id="help">
+                        <hr>
+                        <p>Taking A (pink) as an example:</p>
+                        <ul>
+                            <li>Above large breakpoint it occupies 3 columns with <code>.col-lg-3</code></li>
+                            <li>Above medium breakpoint it occupies 4 columns with <code>.col-md-4</code></li>
+                            <li>Above small breakpoint it occupies 6 columns with <code>.col-sm-6</code></li>
+                            <li>Below extra small breakpoint it occupies 12 columns with <code>.col-12</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        /* global $ */
+        var el = $('#resolution');
+        $(window).on('load resize', function() {
+            el.html($(window).width() + 'px');
+        })
+    </script>
+</body>
+
+</html>

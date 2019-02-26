@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 0 20px;
+        }
+
+        .box {
+            background-color: #444444;
+            text-align: center;
+            padding: 200px 0;
+            color: white;
+            font-size: 32px;
+            line-height: 42px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-header">
+                        <h1>Container Demo <small id="resolution"></small></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box">
+                        <strong class="d-block d-sm-none">Default</strong>
+                        <strong class="d-none d-sm-block d-md-none">Small</strong>
+                        <strong class="d-none d-md-block d-lg-none">Medium</strong>
+                        <strong class="d-none d-lg-block d-xl-none">Large</strong>
+                        <strong class="d-none d-xl-block">Extra Large</strong>
+                        <span class="d-block d-sm-none">100%</span>
+
+                        <span id="width"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <br>
+                    <p><small><a class="text-muted" data-toggle="collapse" href="#help" aria-expanded="false" aria-controls="collapseExample">Explanation</a></small></p>
+                    <div class="collapse" id="help">
+                        <hr>
+                        <p>The Bootstrap grid container element has a different fixed width depending on the currently active breakpoint</p>
+                        <ul>
+                            <li>Extra Large: <code>1100px</code></li>
+                            <li>Large: <code>930px</code></li>
+                            <li>Medium: <code>690px</code></li>
+                            <li>Small: <code>510px</code></li>
+                            <li>Extra small: <code>100%</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        /* global $ */
+        var el = $('#resolution');
+        var width = $('#width');
+        $(window).on('load resize', function() {
+            el.html($(window).width() + 'px');
+            width.html(width.parent().width() + 'px');
+        })
+    </script>
+</body>
+
+</html>
